@@ -1,0 +1,16 @@
+# Ignore virtual environment
+dbt-core-venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore dbt log files
+logs/
+target/
+
+# Ignore compiled files and other temporary files
+.DS_Store
+.vscode/
+.idea/
+.dbt/
