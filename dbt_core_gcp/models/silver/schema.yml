@@ -1,0 +1,42 @@
+version: 2
+
+
+sources:
+  - name: demo_bronze
+    tables:
+      - name: payments
+
+models:
+  - name: silver_payments
+    description: "Aggregated payments data from demo_bronze"
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for the transaction"
+        tests:
+          - not_null  # Ensure transaction_id is not null
+          - unique    # Ensure transaction_id is unique
+
+      - name: contract_id
+        description: "Contract associated with the transaction"
+        tests:
+          - not_null  # Ensure contract_id is not null
+
+      - name: client_id
+        description: "Client associated with the transaction"
+        tests:
+          - not_null  # Ensure client_id is not null
+
+      - name: transaction_date
+        description: "Date of the transaction"
+        tests:
+          - not_null  # Ensure transaction_date is not null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: TIMESTAMP
+
+      - name: payment_amt
+        description: "Amount of the payment"
+        tests:
+          - contain_dollar_sign
+        
+      - name: payment_code
+        description: "Code representing the payment method"

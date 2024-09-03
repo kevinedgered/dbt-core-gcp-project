@@ -1,0 +1,4 @@
+transaction_id,contract_id,client_id,transaction_date,payment_amt,payment_code,entity_type,entity_year_established
+17810,1022,1,2018-04-22 18:08:36 UTC,$9.67,PAYMENT,Hybrid Trust,2007
+17811,1023,2,2018-04-22 18:09:36 UTC,$1.67,PAYMENT,,
+17812,1024,3,2018-04-22 18:10:36 UTC,$91.67,PAYMENT,Hybrid Trust,2013
