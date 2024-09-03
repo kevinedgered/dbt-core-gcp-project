@@ -12,5 +12,4 @@ select transaction_id
   , CONCAT('$',ROUND(SAFE_DIVIDE(payment_amt, 100),2)) as payment_amt  
   , payment_code
 from {{source('demo_bronze','payments')}}
-
-
+where payment_amt >0
