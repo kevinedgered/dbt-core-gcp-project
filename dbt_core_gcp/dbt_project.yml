@@ -37,7 +37,3 @@ models:
     gold:
       +materialized: table
 
-seeds: 
-  dbt_core_gcp:
-    +schema: testing
-     

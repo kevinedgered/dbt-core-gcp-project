@@ -1,4 +1,4 @@
-{% test contain_dollar_sign(model, column_name) %}
+{% test not_contain_dollar_sign(model, column_name) %}
 
     select *
     from {{ model }}

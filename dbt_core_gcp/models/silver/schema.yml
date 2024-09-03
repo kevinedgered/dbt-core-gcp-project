@@ -36,7 +36,7 @@ models:
       - name: payment_amt
         description: "Amount of the payment"
         tests:
-          - contain_dollar_sign
+          - not_contain_dollar_sign
         
       - name: payment_code
         description: "Code representing the payment method"
